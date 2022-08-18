@@ -3,6 +3,8 @@
 mkdir -p esm cjs
 mv index.js esm/index.js
 mv index.d.ts esm/index.d.ts
+sed -i "s#'mimic-fn'#'@esm2cjs/mimic-fn'#" esm/index.js
+
 sed -i 's#./index.js#./esm/index.js#' test.js
 mv index.test-d.ts esm/index.test-d.ts
 mv test.js test.mjs
@@ -30,7 +32,8 @@ PJSON=$(cat package.json | jq --tab '
 	| .typesVersions["*"]["cjs/index.d.ts"] = ["esm/index.d.ts"]
 	| .typesVersions["*"]["*"] = ["esm/*"]
 	| .scripts["to-cjs"] = "esm2cjs --in esm --out cjs -t node12"
-	| .dependencies["mimic-fn"] |= "npm:@esm2cjs/mimic-fn@" + .
+	| .dependencies["@esm2cjs/mimic-fn"] = .dependencies["mimic-fn"]
+	| del(.dependencies["mimic-fn"])
 	| .xo = {ignores: ["cjs", "**/*.test-d.ts"]}
 ')
 echo "$PJSON" > package.json

@@ -1,6 +1,6 @@
 {
 	"name": "@esm2cjs/onetime",
-	"version": "6.0.0",
+	"version": "6.0.1-cjs.0",
 	"description": "Ensure a function is only called once. This is a fork of sindresorhus/onetime, but with CommonJS support.",
 	"license": "MIT",
 	"repository": "esm2cjs/onetime",
@@ -39,7 +39,7 @@
 		"prevent"
 	],
 	"dependencies": {
-		"mimic-fn": "npm:@esm2cjs/mimic-fn@^4.0.0"
+		"@esm2cjs/mimic-fn": "^4.0.0"
 	},
 	"devDependencies": {
 		"ava": "^3.15.0",

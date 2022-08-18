@@ -1,4 +1,4 @@
-import mimicFunction from 'mimic-fn';
+import mimicFunction from '@esm2cjs/mimic-fn';
 
 const calledFunctions = new WeakMap();
 

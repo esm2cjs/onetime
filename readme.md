@@ -4,7 +4,7 @@ This is a fork of https://github.com/sindresorhus/onetime, but automatically pat
 
 ## Install
 
-Use an npm alias to install this package under the original name:
+You can use an npm alias to install this package under the original name:
 
 ```
 npm i onetime@npm:@esm2cjs/onetime
@@ -16,6 +16,23 @@ npm i onetime@npm:@esm2cjs/onetime
     "onetime": "npm:@esm2cjs/onetime"
 }
 ```
+
+but `npm` might dedupe this incorrectly when other packages depend on the replaced package. If you can, prefer using the scoped package directly:
+
+```
+npm i @esm2cjs/onetime
+```
+
+```jsonc
+// package.json
+"dependencies": {
+    "@esm2cjs/onetime": "^ver.si.on"
+}
+```
+
+> **Note:**
+> We strive to use the same versions as the upstream package, but unfortunately there is a bit of a learning curve with these things.
+> As a result, we had to re-publish `6.0.0` as `6.0.1-cjs.0`.
 
 ## Usage
 

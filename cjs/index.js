@@ -26,7 +26,7 @@ __export(esm_exports, {
   default: () => esm_default
 });
 module.exports = __toCommonJS(esm_exports);
-var import_mimic_fn = __toESM(require("mimic-fn"));
+var import_mimic_fn = __toESM(require("@esm2cjs/mimic-fn"));
 const calledFunctions = /* @__PURE__ */ new WeakMap();
 const onetime = (function_, options = {}) => {
   if (typeof function_ !== "function") {
