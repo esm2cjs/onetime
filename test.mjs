@@ -1,5 +1,5 @@
 import test from 'ava';
-import onetime from './index.js';
+import onetime from './esm/index.js';
 
 test('call function once', t => {
 	let i = 0;
